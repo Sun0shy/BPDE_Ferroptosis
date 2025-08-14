@@ -38,7 +38,7 @@ Diff <- topTable(fit2,adjust = "fdr", number = length(rownames(data)))
 
 DIFFOUT <- rbind(id = colnames(Diff), Diff)
 write.table(DIFFOUT, file = "./output/DIFF_all.xls", sep = "\t", quote = F, col.names = F)
-s
+
 Diff <- Diff[order(as.numeric(as.vector(Diff$logFC))),]
 diffGene <- as.vector(rownames(Diff))
 diffLength <- length(diffGene)
@@ -67,4 +67,5 @@ pheatmap(afExp,
          fontsize_row = 6,
          annotation_colors = anncolor
 )
+
 
